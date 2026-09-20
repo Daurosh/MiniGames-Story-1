@@ -1,0 +1,260 @@
+@use '../../styles/breakpoints';
+
+.carousel {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  width: 100%;
+  padding: var(--space-md);
+}
+
+.carousel__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.carousel__heading {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.carousel__accent {
+  box-sizing: border-box;
+  width: 8px;
+  height: 24px;
+  background: var(--color-accent);
+  border: 1.5px solid var(--color-ink);
+  border-radius: 4px;
+}
+
+.carousel__title {
+  margin: 0;
+  font-family: var(--font-family-base);
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  color: var(--color-ink);
+}
+
+.carousel__controls {
+  display: none;
+  gap: var(--space-md);
+}
+
+.carousel__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--color-ink);
+  border-radius: 9999px;
+  background: var(--color-surface);
+  font-size: 18px;
+  color: var(--color-ink);
+  cursor: pointer;
+
+  &--next {
+    background: var(--color-accent);
+  }
+}
+
+.carousel__track {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  width: 100%;
+  padding: 0 var(--space-xs);
+  margin: 0;
+  list-style: none;
+  overflow-x: auto;
+  scrollbar-width: none; // Firefox
+  -ms-overflow-style: none; // IE/Edge
+
+  &::-webkit-scrollbar {
+    display: none; // Chrome/Safari
+  }
+}
+
+.game-card {
+  box-sizing: border-box;
+  position: relative;
+  flex-shrink: 0;
+  height: 200px;
+  background: var(--color-surface);
+  border: 2.5px solid var(--color-ink);
+  box-shadow: 4px 4px 0 var(--color-ink);
+  border-radius: 16px;
+  overflow: hidden;
+
+  &--sm {
+    width: 56px;
+  }
+
+  &--md {
+    width: 218px;
+  }
+
+  &--lg {
+    width: 218px;
+    display: none;
+  }
+}
+
+.game-card__image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.game-card__overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding: var(--space-md);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.4) 17.31%,
+    rgba(0, 0, 0, 0.85) 46.15%
+  );
+}
+
+.game-card__title {
+  margin: 0;
+  font-family: var(--font-family-base);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #ffffff;
+}
+
+.game-card__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.game-card__stat {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-family-base);
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  color: #ffffff;
+}
+
+.game-card__icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+
+  &--star {
+    background: var(--color-accent);
+  }
+
+  &--heart {
+    background: var(--color-danger);
+  }
+}
+
+@include breakpoints.tablet {
+  .carousel {
+    padding: var(--space-lg) var(--space-2xl);
+  }
+
+  .carousel__title {
+    font-size: 24px;
+  }
+
+  .carousel__controls {
+    display: flex;
+  }
+
+  .carousel__arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .game-card {
+    height: 280px;
+
+    &--sm {
+      width: 104px;
+    }
+
+    &--md {
+      width: 448px;
+      display: none;
+    }
+
+    &--lg {
+      width: 448px;
+      display: block;
+    }
+  }
+
+  .game-card__title {
+    font-size: 18px;
+  }
+
+  .game-card__stat {
+    font-size: 14px;
+  }
+}
+
+@include breakpoints.desktop {
+  .carousel {
+    padding: var(--space-xl) var(--space-3xl);
+  }
+
+  .carousel__title {
+    font-size: 32px;
+    line-height: 39px;
+  }
+
+  .carousel__arrow {
+    width: 48px;
+    height: 48px;
+    font-size: 24px;
+  }
+
+  .game-card {
+    height: 384px;
+
+    &--sm {
+      width: 120px;
+    }
+
+    &--md {
+      width: 288px;
+      display: block;
+    }
+
+    &--lg {
+      width: 816px;
+      display: block;
+    }
+  }
+
+  .game-card__title {
+    font-size: 18px;
+  }
+
+  .game-card__stat {
+    font-size: 16px;
+  }
+}

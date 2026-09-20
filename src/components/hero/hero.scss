@@ -1,0 +1,141 @@
+@use '../../styles/breakpoints';
+
+.hero {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 64px var(--space-md);
+  background-image:
+    linear-gradient(var(--color-overlay), var(--color-overlay)),
+    url('../../assets/images/hero-bg.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero__card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-md);
+  width: 100%;
+  padding: var(--space-lg);
+  background: var(--color-bg);
+  border: 2px solid var(--color-ink);
+  border-radius: 12px;
+  box-shadow: 4px 4px 0 var(--color-ink);
+}
+
+.hero__title {
+  margin: 0;
+  font-family: var(--font-family-base);
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.2;
+  color: var(--color-ink);
+}
+
+.hero__text {
+  margin: 0;
+  font-family: var(--font-family-base);
+  font-weight: 500;
+  color: var(--color-ink-muted);
+
+  &--short {
+    display: block;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  &--long {
+    display: none;
+  }
+}
+
+.hero__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 8px 16px;
+  background: var(--color-accent);
+  border: 2px solid var(--color-ink);
+  border-radius: 8px;
+  font-family: var(--font-family-base);
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  color: var(--color-ink);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@include breakpoints.tablet {
+  .hero {
+    padding: 72px var(--space-2xl);
+  }
+
+  .hero__card {
+    width: 480px;
+    padding: var(--space-lg);
+    gap: var(--space-md);
+    border-width: 2.5px;
+    box-shadow: 6px 6px 0 var(--color-ink);
+    border-radius: 16px;
+  }
+
+  .hero__title {
+    font-size: 36px;
+    line-height: 1.15;
+  }
+
+  .hero__text {
+    &--short {
+      display: none;
+    }
+
+    &--long {
+      display: block;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+  }
+
+  .hero__button {
+    padding: 10px 20px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+@include breakpoints.desktop {
+  .hero {
+    padding: 112px var(--space-3xl);
+  }
+
+  .hero__card {
+    width: 640px;
+    padding: var(--space-xl);
+    gap: var(--space-lg);
+    border-width: 3px;
+    box-shadow: 8px 8px 0 var(--color-ink);
+    border-radius: 24px;
+  }
+
+  .hero__title {
+    font-size: 56px;
+    line-height: 1.1;
+  }
+
+  .hero__text--long {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .hero__button {
+    padding: 16px 24px;
+    font-size: 18px;
+    line-height: 22px;
+  }
+}

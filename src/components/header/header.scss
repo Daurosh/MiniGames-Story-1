@@ -1,0 +1,156 @@
+@use '../../styles/breakpoints';
+
+.header {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: var(--space-md);
+  background: var(--color-bg);
+  border-bottom: 2px solid var(--color-ink);
+}
+
+.header__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  text-decoration: none;
+}
+
+.header__logo {
+  border: 2px solid var(--color-ink);
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.header__brand-name {
+  font-family: var(--font-family-base);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: var(--color-ink);
+}
+
+.header__nav-links {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 40px;
+}
+
+.header__nav-link {
+  font-family: var(--font-family-base);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: var(--color-ink-muted);
+  text-decoration: none;
+
+  &--active {
+    font-weight: 700;
+    color: var(--color-ink);
+  }
+}
+
+.header__actions {
+  display: none;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.header__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 8px 16px;
+  border: 2px solid var(--color-ink);
+  border-radius: 8px;
+  font-family: var(--font-family-base);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: var(--color-ink);
+  text-decoration: none;
+  cursor: pointer;
+
+  &--outline {
+    display: none;
+    background: transparent;
+  }
+
+  &--filled {
+    background: var(--color-accent);
+  }
+}
+
+.header__burger {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 8px;
+  gap: 4px;
+  background: var(--color-surface);
+  border: 2px solid var(--color-ink);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.header__burger-line {
+  width: 14px;
+  height: 0;
+  border-top: 2px solid var(--color-ink);
+}
+
+@include breakpoints.tablet {
+  .header {
+    padding: var(--space-md) var(--space-2xl);
+  }
+
+  .header__actions {
+    display: flex;
+  }
+
+  .header__burger-line {
+    width: 16px;
+  }
+}
+
+@include breakpoints.desktop {
+  .header {
+    padding: var(--space-lg) var(--space-3xl);
+  }
+
+  .header__brand-name {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .header__nav-links {
+    display: flex;
+  }
+
+  .header__btn {
+    padding: 10px 20px;
+
+    &--outline {
+      display: inline-flex;
+    }
+  }
+
+  .header__burger {
+    display: none;
+  }
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}

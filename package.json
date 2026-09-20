@@ -1,12 +1,15 @@
 {
   "name": "minigames-story-1",
   "version": "1.0.0",
+  "type": "module",
   "description": "A responsive single-page application built as part of the RS School qualifying stage.",
   "main": "index.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint . --ext .ts",
+    "format": "prettier --write ."
   },
   "repository": {
     "type": "git",
@@ -15,7 +18,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/Daurosh/MiniGames-Story-1/issues"
   },

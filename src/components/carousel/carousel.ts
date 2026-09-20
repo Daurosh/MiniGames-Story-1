@@ -44,12 +44,21 @@ const games: GameCard[] = [
   },
 ];
 
+const gameImages = import.meta.glob<{ default: string }>('/src/assets/images/games/*.jpg', {
+  eager: true,
+});
+
+function getImageUrl(filename: string): string {
+  const path = `/src/assets/images/games/${filename}`;
+  return gameImages[path]?.default ?? '';
+}
+
 function renderCard(game: GameCard): string {
   const showInfo = game.rating !== '';
 
   return `
     <li class="game-card game-card--${game.size}">
-      <div class="game-card__image" style="background-image: url('/src/assets/images/games/${game.image}')">
+      <div class="game-card__image" style="background-image: url('${getImageUrl(game.image)}')">
         ${
           showInfo
             ? `

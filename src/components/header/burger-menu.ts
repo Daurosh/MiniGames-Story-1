@@ -1,10 +1,11 @@
+import logoUrl from '@/assets/icons/logo.png';
 export function renderBurgerMenu(): string {
   return `
     <div class="burger-overlay" data-burger-overlay hidden></div>
     <aside class="burger-menu" data-burger-menu hidden>
       <div class="burger-menu__top">
         <a href="/" class="burger-menu__brand" aria-label="MiniGames home">
-          <img src="/src/assets/icons/logo.png" alt="" class="burger-menu__logo" width="32" height="32" />
+          <img src="${logoUrl}" alt="" class="burger-menu__logo" width="32" height="32" />
           <span class="burger-menu__brand-name">MiniGames</span>
         </a>
 

@@ -121,3 +121,30 @@
     width: 16px;
   }
 }
+
+@include breakpoints.desktop {
+  .header {
+    padding: var(--space-lg) var(--space-3xl);
+  }
+
+  .header__brand-name {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .header__nav-links {
+    display: flex;
+  }
+
+  .header__btn {
+    padding: 10px 20px;
+
+    &--outline {
+      display: inline-flex;
+    }
+  }
+
+  .header__burger {
+    display: none;
+  }
+}

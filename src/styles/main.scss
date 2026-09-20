@@ -1,5 +1,6 @@
 @use 'tokens';
 @use 'breakpoints';
+@use 'reset';
 @use '../components/header/header';
 @use '../components/header/burger-menu';
 @use '../components/hero/hero';
@@ -7,15 +8,4 @@
 @use '../components/leaderboard/leaderboard';
 @use '../components/developer-cta/developer-cta';
 @use '../components/footer/footer';
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: var(--font-family-base);
-  color: var(--color-ink);
-  background: var(--color-bg);
-}
+@use '../components/auth-dialog/auth-dialog';

@@ -17,8 +17,8 @@ export function renderHeader(): string {
 
       <div class="header__right">
         <div class="header__actions">
-          <a href="#" class="header__btn header__btn--outline">Log In</a>
-          <a href="#" class="header__btn header__btn--filled">Sign Up</a>
+          <a href="#" class="header__btn header__btn--outline" data-auth-trigger="login">Log In</a>
+          <a href="#" class="header__btn header__btn--filled" data-auth-trigger="register">Sign Up</a>
         </div>
 
         <button

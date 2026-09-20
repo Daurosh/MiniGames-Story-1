@@ -28,8 +28,8 @@ export function renderBurgerMenu(): string {
       </nav>
 
       <div class="burger-menu__actions">
-        <a href="#" class="burger-menu__btn burger-menu__btn--outline">Log In</a>
-        <a href="#" class="burger-menu__btn burger-menu__btn--filled">Sign Up</a>
+        <a href="#" class="burger-menu__btn burger-menu__btn--outline" data-auth-trigger="login">Log In</a>
+        <a href="#" class="burger-menu__btn burger-menu__btn--filled" data-auth-trigger="register">Sign Up</a>
       </div>
     </aside>
   `;

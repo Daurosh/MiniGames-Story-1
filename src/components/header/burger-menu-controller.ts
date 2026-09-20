@@ -45,4 +45,11 @@ export function initBurgerMenu(): void {
       closeMenu();
     }
   });
+
+  const authTriggersInsideMenu = menu.querySelectorAll<HTMLElement>('[data-auth-trigger]');
+  authTriggersInsideMenu.forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+      closeMenu();
+    });
+  });
 }

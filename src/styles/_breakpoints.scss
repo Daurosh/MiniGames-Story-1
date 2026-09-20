@@ -1,6 +1,6 @@
 $breakpoint-mobile: 375px;
 $breakpoint-tablet: 768px;
-$breakpoint-desktop: 1920px;
+$breakpoint-desktop: 1280px;
 
 @mixin tablet {
   @media (min-width: $breakpoint-tablet) {

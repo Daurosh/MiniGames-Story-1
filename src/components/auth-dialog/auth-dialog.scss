@@ -40,7 +40,7 @@
   padding: var(--space-xl);
   background: var(--color-bg);
   border: 3px solid var(--color-ink);
-  box-shadow: 8px 8px 0 #111111;
+  box-shadow: 8px 8px 0 var(--color-shadow-dark);
   border-radius: 24px;
   transform: translate(-50%, -50%) scale(0.95);
   opacity: 0;
@@ -101,7 +101,7 @@
 
   &--active {
     background: var(--color-tab-active);
-    color: #ffffff;
+    color: var(--color-white);
   }
 }
 
@@ -279,6 +279,10 @@
   height: 24px;
   color: var(--color-google-red);
   font-weight: 700;
+}
+
+.auth-panel {
+  display: contents;
 }
 
 .auth-footer {

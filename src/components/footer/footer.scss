@@ -40,7 +40,7 @@
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
-  color: #ffffff;
+  color: var(--color-white);
 }
 
 .footer__tagline {
@@ -70,7 +70,7 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 19px;
-  color: #ffffff;
+  color: var(--color-white);
 }
 
 .footer__list {
@@ -107,7 +107,7 @@
   height: 32px;
   background: var(--color-icon-bg);
   border-radius: 9999px;
-  color: #ffffff;
+  color: var(--color-white);
   text-decoration: none;
   font-size: 16px;
 }
@@ -180,7 +180,7 @@
   justify-content: center;
   width: 20px;
   height: 20px;
-  background: #ffffff;
+  background: var(--color-white);
   border-radius: 10px;
   font-size: 10px;
   color: var(--color-ink);

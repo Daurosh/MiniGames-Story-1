@@ -7,7 +7,7 @@ export function initAuthDialog(): void {
   const triggers = document.querySelectorAll<HTMLElement>('[data-auth-trigger]');
   const tabs = document.querySelectorAll<HTMLButtonElement>('[data-auth-tab]');
   const switchButtons = document.querySelectorAll<HTMLButtonElement>('[data-auth-switch]');
-  const forms = document.querySelectorAll<HTMLFormElement>('[data-auth-form]');
+  const forms = document.querySelectorAll<HTMLElement>('[data-auth-form]');
 
   if (!overlay || !dialog || !closeButton) {
     return;
@@ -76,8 +76,9 @@ export function initAuthDialog(): void {
     });
   });
 
-  forms.forEach((form) => {
-    form.addEventListener('submit', (event) => {
+  forms.forEach((panel) => {
+    const form = panel.querySelector('form');
+    form?.addEventListener('submit', (event) => {
       event.preventDefault();
     });
   });

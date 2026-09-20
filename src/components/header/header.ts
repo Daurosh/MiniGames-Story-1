@@ -24,6 +24,7 @@ export function renderHeader(): string {
         <button
           type="button"
           class="header__burger"
+          data-burger-toggle
           aria-label="Open menu"
           aria-expanded="false"
         >

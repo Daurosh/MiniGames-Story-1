@@ -148,3 +148,9 @@
     display: none;
   }
 }
+
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}

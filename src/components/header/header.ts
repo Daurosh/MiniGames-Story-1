@@ -15,21 +15,23 @@ export function renderHeader(): string {
         </ul>
       </nav>
 
-      <div class="header__actions">
-        <a href="#" class="header__btn header__btn--outline">Log In</a>
-        <a href="#" class="header__btn header__btn--filled">Sign Up</a>
-      </div>
+      <div class="header__right">
+        <div class="header__actions">
+          <a href="#" class="header__btn header__btn--outline">Log In</a>
+          <a href="#" class="header__btn header__btn--filled">Sign Up</a>
+        </div>
 
-      <button
-        type="button"
-        class="header__burger"
-        aria-label="Open menu"
-        aria-expanded="false"
-      >
-        <span class="header__burger-line"></span>
-        <span class="header__burger-line"></span>
-        <span class="header__burger-line"></span>
-      </button>
+        <button
+          type="button"
+          class="header__burger"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          <span class="header__burger-line"></span>
+          <span class="header__burger-line"></span>
+          <span class="header__burger-line"></span>
+        </button>
+      </div>
     </header>
   `;
 }

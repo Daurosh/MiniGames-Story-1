@@ -1,3 +1,5 @@
+@use '../../styles/breakpoints';
+
 .header {
   box-sizing: border-box;
   display: flex;
@@ -104,4 +106,18 @@
   width: 14px;
   height: 0;
   border-top: 2px solid var(--color-ink);
+}
+
+@include breakpoints.tablet {
+  .header {
+    padding: var(--space-md) var(--space-2xl);
+  }
+
+  .header__actions {
+    display: flex;
+  }
+
+  .header__burger-line {
+    width: 16px;
+  }
 }

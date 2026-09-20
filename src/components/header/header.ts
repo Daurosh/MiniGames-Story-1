@@ -1,8 +1,9 @@
+import logoUrl from '@/assets/icons/logo.png';
 export function renderHeader(): string {
   return `
     <header class="header">
       <a href="/" class="header__brand" aria-label="MiniGames home">
-        <img src="/src/assets/icons/logo.png" alt="" class="header__logo" width="32" height="32" />
+        <img src="${logoUrl}" alt="" class="header__logo" width="32" height="32" />
         <span class="header__brand-name">MiniGames</span>
       </a>
 

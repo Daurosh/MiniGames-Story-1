@@ -1,3 +1,4 @@
+import logoUrl from '@/assets/icons/logo.png';
 const GITHUB_USERNAME = 'Daurosh';
 const CURRENT_YEAR = new Date().getFullYear();
 
@@ -7,7 +8,7 @@ export function renderFooter(): string {
       <div class="footer__top">
         <div class="footer__brand">
           <a href="/" class="footer__logo-link" aria-label="MiniGames home">
-            <img src="/src/assets/icons/logo.png" alt="" class="footer__logo" width="32" height="32" />
+            <img src="${logoUrl}" alt="" class="footer__logo" width="32" height="32" />
             <span class="footer__logo-text">MiniGames</span>
           </a>
           <p class="footer__tagline">

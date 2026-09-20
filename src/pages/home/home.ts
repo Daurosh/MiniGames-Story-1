@@ -5,6 +5,7 @@ import { renderHero } from '@/components/hero/hero';
 import { renderCarousel } from '@/components/carousel/carousel';
 import { renderLeaderboard } from '@/components/leaderboard/leaderboard';
 import { renderDeveloperCta } from '@/components/developer-cta/developer-cta';
+import { renderFooter } from '@/components/footer/footer';
 
 export function renderHomePage(root: HTMLElement): void {
   root.innerHTML = `
@@ -16,7 +17,7 @@ export function renderHomePage(root: HTMLElement): void {
       ${renderLeaderboard()}
       ${renderDeveloperCta()}
     </main>
-    <footer id="footer"></footer>
+    ${renderFooter()}
   `;
 
   initBurgerMenu();

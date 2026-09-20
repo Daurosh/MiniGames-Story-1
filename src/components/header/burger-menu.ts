@@ -1,7 +1,7 @@
 export function renderBurgerMenu(): string {
   return `
     <div class="burger-overlay" data-burger-overlay hidden></div>
-    <aside class="burger-menu" data-burger-menu hidden aria-hidden="true">
+    <aside class="burger-menu" data-burger-menu hidden>
       <div class="burger-menu__top">
         <a href="/" class="burger-menu__brand" aria-label="MiniGames home">
           <img src="/src/assets/icons/logo.png" alt="" class="burger-menu__logo" width="32" height="32" />

@@ -50,61 +50,78 @@ function renderGoogleButton(text: string): string {
 
 function renderLoginForm(): string {
   return `
-    <form class="auth-form" data-auth-form="login" novalidate>
-      <div class="auth-header">
-        <h2 class="auth-header__title">Welcome Back!</h2>
-        <p class="auth-header__subtitle">Sign in to resume your games and progress.</p>
-      </div>
+    <div
+      class="auth-panel"
+      data-auth-form="login"
+      role="tabpanel"
+      id="auth-panel-login"
+      aria-labelledby="auth-tab-login"
+    >
+      <form class="auth-form" novalidate>
+        <div class="auth-header">
+          <h2 class="auth-header__title">Welcome Back!</h2>
+          <p class="auth-header__subtitle">Sign in to resume your games and progress.</p>
+        </div>
 
-      <div class="auth-fields">
-        ${renderInput('login-email', 'Email Address', 'email', 'e.g. alex@minigames.com', ICON_MAIL)}
-        ${renderInput('login-password', 'Password', 'password', '••••••••', ICON_LOCK)}
-      </div>
+        <div class="auth-fields">
+          ${renderInput('login-email', 'Email Address', 'email', 'e.g. alex@minigames.com', ICON_MAIL)}
+          ${renderInput('login-password', 'Password', 'password', '••••••••', ICON_LOCK)}
+        </div>
 
-      <div class="auth-links">
-        <a href="#" class="auth-links__forgot">Forgot Password?</a>
-      </div>
+        <div class="auth-links">
+          <a href="#" class="auth-links__forgot">Forgot Password?</a>
+        </div>
 
-      <div class="auth-actions">
-        <button type="submit" class="auth-cta-btn">Login</button>
-        ${renderDivider()}
-        ${renderGoogleButton('Continue with Google')}
-      </div>
+        <div class="auth-actions">
+          <button type="submit" class="auth-cta-btn">Login</button>
+          ${renderDivider()}
+          ${renderGoogleButton('Continue with Google')}
+        </div>
 
-      <p class="auth-footer">
-        Don't have an account?
-        <button type="button" class="auth-footer__switch" data-auth-switch="register">Register</button>
-      </p>
-    </form>
+        <p class="auth-footer">
+          Don't have an account?
+          <button type="button" class="auth-footer__switch" data-auth-switch="register">Register</button>
+        </p>
+      </form>
+    </div>
   `;
 }
 
 function renderRegisterForm(): string {
   return `
-    <form class="auth-form" data-auth-form="register" hidden novalidate>
-      <div class="auth-header">
-        <h2 class="auth-header__title">Create Account</h2>
-        <p class="auth-header__subtitle">Join MiniGames to track your score &amp; streak.</p>
-      </div>
+    <div
+      class="auth-panel"
+      data-auth-form="register"
+      role="tabpanel"
+      id="auth-panel-register"
+      aria-labelledby="auth-tab-register"
+      hidden
+    >
+      <form class="auth-form" novalidate>
+        <div class="auth-header">
+          <h2 class="auth-header__title">Create Account</h2>
+          <p class="auth-header__subtitle">Join MiniGames to track your score &amp; streak.</p>
+        </div>
 
-      <div class="auth-fields">
-        ${renderInput('register-username', 'Username', 'text', 'e.g. CozyGamer_99', ICON_USER)}
-        ${renderInput('register-email', 'Email Address', 'email', 'your.email@domain.com', ICON_MAIL)}
-        ${renderInput('register-password', 'Password', 'password', 'Min. 8 characters', ICON_LOCK)}
-        ${renderInput('register-confirm-password', 'Confirm Password', 'password', 'Repeat your password', ICON_LOCK)}
-      </div>
+        <div class="auth-fields">
+          ${renderInput('register-username', 'Username', 'text', 'e.g. CozyGamer_99', ICON_USER)}
+          ${renderInput('register-email', 'Email Address', 'email', 'your.email@domain.com', ICON_MAIL)}
+          ${renderInput('register-password', 'Password', 'password', 'Min. 8 characters', ICON_LOCK)}
+          ${renderInput('register-confirm-password', 'Confirm Password', 'password', 'Repeat your password', ICON_LOCK)}
+        </div>
 
-      <div class="auth-actions">
-        <button type="submit" class="auth-cta-btn">Create Account</button>
-        ${renderDivider()}
-        ${renderGoogleButton('Sign up with Google')}
-      </div>
+        <div class="auth-actions">
+          <button type="submit" class="auth-cta-btn">Create Account</button>
+          ${renderDivider()}
+          ${renderGoogleButton('Sign up with Google')}
+        </div>
 
-      <p class="auth-footer">
-        Already have an account?
-        <button type="button" class="auth-footer__switch" data-auth-switch="login">Login</button>
-      </p>
-    </form>
+        <p class="auth-footer">
+          Already have an account?
+          <button type="button" class="auth-footer__switch" data-auth-switch="login">Login</button>
+        </p>
+      </form>
+    </div>
   `;
 }
 
@@ -125,26 +142,30 @@ export function renderAuthDialog(): string {
 
       <div class="auth-tabs" role="tablist">
         <button
-          type="button"
-          class="auth-tabs__tab auth-tabs__tab--active"
-          data-auth-tab="login"
-          role="tab"
-          aria-selected="true"
+            type="button"
+            class="auth-tabs__tab auth-tabs__tab--active"
+            data-auth-tab="login"
+            role="tab"
+            id="auth-tab-login"
+            aria-selected="true"
+            aria-controls="auth-panel-login"
         >
-          Login
+            Login
         </button>
         <button
-          type="button"
-          class="auth-tabs__tab"
-          data-auth-tab="register"
-          role="tab"
-          aria-selected="false"
+            type="button"
+            class="auth-tabs__tab"
+            data-auth-tab="register"
+            role="tab"
+            id="auth-tab-register"
+            aria-selected="false"
+            aria-controls="auth-panel-register"
         >
-          Register
+            Register
         </button>
       </div>
 
-      <h1 id="auth-dialog-title" class="sr-only">Account access</h1>
+      <h2 id="auth-dialog-title" class="sr-only">Account access</h2>
 
       ${renderLoginForm()}
       ${renderRegisterForm()}

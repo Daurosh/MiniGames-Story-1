@@ -1,5 +1,6 @@
 @use 'tokens';
 @use 'breakpoints';
+@use '../components/header/header';
 
 * {
   box-sizing: border-box;

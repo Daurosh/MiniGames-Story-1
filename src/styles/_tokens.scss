@@ -1,8 +1,10 @@
 :root {
-  // Colors — placeholder, to be refined from Figma
-  --color-primary: #000000;
-  --color-background: #ffffff;
-  --color-text: #000000;
+  // Colors
+  --color-bg: #f9f8f3;
+  --color-surface: #ffffff;
+  --color-ink: #242145;
+  --color-ink-muted: #5f5d75;
+  --color-accent: #ffd02b;
 
   // Typography
   --font-family-base: 'Inter', sans-serif;
@@ -13,4 +15,6 @@
   --space-md: 16px;
   --space-lg: 24px;
   --space-xl: 32px;
+  --space-2xl: 40px;
+  --space-3xl: 80px;
 }
